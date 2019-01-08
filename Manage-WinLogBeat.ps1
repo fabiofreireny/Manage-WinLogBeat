@@ -7,21 +7,21 @@
 
     You must create a winLogBeat folder where this script lives and place all winLogbeat files that you downloaded from Elastic there
 
-    you must also create winLogbeat.XX.yml files, one for each type of server you collect info from. For example:
+    You must also create winLogbeat.XX.yml files, one for each type of server you collect info from. For example:
     - winLogBeat.DC.yml for Domain Controllers (included as example)
     - winLogBeat.Print.yml for Print Servers
     Adjust the $TYPE parameter to meet your needs
 
     The script will check the time stamp of winlogbeat.exe and winlogbeat.yml. Based on that information it will:
     - Install winLogBeat if winLogBeat.exe isn't found on the remote computer
-    - Upgrade winLogBeat if the local version or the EXE is newer
+    - Upgrade winLogBeat if the local version of the EXE is newer
     - Update winLogBeat configuration (yml file) if the local version of the YML is newer
 
 .EXAMPLE
     PS C:\> Manage-WinLogBeat.ps1 -Targets "nydc01", "nydc02" -Type DC -Credential (Get-Credential)
     Script will prompt for local admin credentials (Domain Admin since these servers are DCs), connect to the two named servers and apply the 'DC' YML file to them
 
-.NOTES
+.LINK
     https://github.com/fabiofreireny/Manage-WinLogBeat
 #>
 
