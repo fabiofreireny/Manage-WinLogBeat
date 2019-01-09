@@ -102,7 +102,7 @@ setup.kibana:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["radegast-cluster:9200"]
-  #pipeline: winlogbeat-pipeline
+  pipeline: winlogbeat-pipeline
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"
